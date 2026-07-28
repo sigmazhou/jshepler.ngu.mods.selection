@@ -29,6 +29,8 @@ namespace jshepler.ngu.mods
 
             Yggdrasil.AutoHarvest = Config.Bind("Yggdrasil", "AutoHarvest", false, "enable auto harvest/eat fruits when fully grown (max tier)");
 
+            MayoGen.Mode = Config.Bind("MayoGen", "Mode", AutoMayoGen.Mode.OFF, "OFF: no auto allocation; LOW: only run the lowest-mayo generator(s); ALL: run the lowest N generators up to max active slots. Cycle via Alt+click on the Cast/Protect/Trash card buttons");
+
             Experimental.LoadoutSwapKeepsAutoAllocators = Config.Bind("Experimental", "LoadoutSwapKeepsAutoAllocators", false, "if enabled, and have the game setting 'Unassign E/M on Loadout Swap' enabled, auto allocators won't disable on loadout swap");
             Experimental.ModPopupScaling = Config.Bind("Experimental", "ModPopupScaling", 1.0f, "additional scaling multiplier on mod popups, applied after game resolution and dpi (windows scaling)");
         }
@@ -76,6 +78,11 @@ namespace jshepler.ngu.mods
         internal static class Yggdrasil
         {
             internal static ConfigEntry<bool> AutoHarvest;
+        }
+
+        internal static class MayoGen
+        {
+            internal static ConfigEntry<AutoMayoGen.Mode> Mode;
         }
 
         internal static class Experimental

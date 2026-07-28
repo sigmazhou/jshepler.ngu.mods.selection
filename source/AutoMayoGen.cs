@@ -9,11 +9,17 @@ namespace jshepler.ngu.mods
     internal class AutoMayoGen
     {
         internal enum Mode { OFF, LOW, ALL }
-        
+
+        // ModSave not included in this fork - mode is config-backed instead, see below
+        //private static Mode _mode
+        //{
+        //    get => (Mode)ModSave.Data.AutoMayGenMode;
+        //    set => ModSave.Data.AutoMayGenMode = (int)value;
+        //}
         private static Mode _mode
         {
-            get => (Mode)ModSave.Data.AutoMayGenMode;
-            set => ModSave.Data.AutoMayGenMode = (int)value;
+            get => Options.MayoGen.Mode.Value;
+            set => Options.MayoGen.Mode.Value = value;
         }
 
         private static Button _castButton;
