@@ -1,4 +1,5 @@
 This fork is a selection of mods that I want to use.
+Build using `dotnet build -c Release` in source folder (with game path set in csproj)
 Below is original README.
  
 # jshepler.ngu.mods
